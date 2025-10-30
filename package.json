@@ -1,17 +1,32 @@
 {
   "name": "api.crealix.ai",
   "scripts": {
-    "dev": "bun run --hot src/index.ts",
-    "build": "bun build src/index.ts --outdir dist --target bun",
-    "start": "bun run dist/index.js",
+    "dev": "bun run --hot src/main.ts",
+    "build": "bun build src/main.ts --outdir dist --target bun",
+    "start": "bun run dist/main.js",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down"
   },
   "dependencies": {
-    "hono": "^4.10.4"
+    "@prisma/client": "^6.18.0",
+    "dotenv": "^17.2.3",
+    "dotenv-expand": "^12.0.3",
+    "hono": "^4.10.4",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/node": "^24.9.2",
+    "prisma": "^6.18.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
   }
 }
