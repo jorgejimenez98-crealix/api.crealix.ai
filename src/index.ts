@@ -3,7 +3,7 @@ import { Hono } from "hono"
 const app = new Hono()
 
 app.get("/", (c) => {
-  return c.text("Hello Hono Dev!")
+  return c.text("Hello Hono Dev (TEST)!")
 })
 
 export default {
