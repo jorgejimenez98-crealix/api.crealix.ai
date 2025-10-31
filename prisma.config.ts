@@ -1,12 +1,23 @@
-import { defineConfig, env } from "prisma/config";
+import path from "node:path"
+import * as dotenv from "dotenv"
+import * as dotenvExpand from "dotenv-expand"
+import { defineConfig, env as penv } from "prisma/config"
+
+const mode = process.env.ENVIROMENT ?? "local"
+const files = [`.env.${mode}`, `.env`]
+
+for (const file of files) {
+  const res = dotenv.config({ path: file })
+  dotenvExpand.expand(res)
+}
+
+console.info(`[prisma] Loaded environment: ${mode}`)
 
 export default defineConfig({
-  schema: "prisma/schema.prisma",
-  migrations: {
-    path: "prisma/migrations",
-  },
+  schema: path.join("prisma"),
+  migrations: { path: path.join("prisma", "migrations") },
   engine: "classic",
   datasource: {
-    url: env("DATABASE_URL"),
+    url: penv("DATABASE_URL"),
   },
-});
+})
