@@ -10,8 +10,8 @@
 
     "validate": "prisma validate",
     "generate": "prisma generate",
-    "migrate": "prisma migrate dev",
-    "migrate:deploy": "prisma migrate deploy",
+    "makemigration": "prisma migrate dev -n",
+    "migrate": "prisma migrate deploy",
     "reset": "prisma migrate reset -f",
     "studio": "prisma studio",
 

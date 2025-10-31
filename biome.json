@@ -31,6 +31,9 @@
       "correctness": {
         "noUnusedVariables": "error"
       },
+      "complexity": {
+        "noStaticOnlyClass": "off"
+      },
       "suspicious": {
         "noConsole": {
           "level": "on",

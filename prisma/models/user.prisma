@@ -1,0 +1,19 @@
+model User {
+  id           String   @id @default(cuid())
+  firstName    String   @map("first_name")   @db.VarChar(80)
+  lastName     String   @map("last_name")    @db.VarChar(80)
+
+  email        String   @unique              @db.VarChar(320)
+
+  // Store only the hash, never the raw password. Use Argon2id (recommended).
+  passwordHash String   @map("password_hash") @db.VarChar(255)
+
+  isAdmin      Boolean  @default(false)      @map("is_admin")
+  isCustomer   Boolean  @default(true)       @map("is_customer")
+
+  createdAt    DateTime @default(now())      @map("created_at")
+  updatedAt    DateTime @updatedAt           @map("updated_at")
+
+  @@map("users")
+  @@index([createdAt])
+}

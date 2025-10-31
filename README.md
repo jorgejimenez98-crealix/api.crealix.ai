@@ -54,7 +54,7 @@ pnpm generate
 
 ### Run migrations
 ```bash
-pnpm prisma:migrate
+pnpm migrate
 ```
 
 ### Start the API (with hot-reload)
@@ -75,7 +75,7 @@ pnpm generate
 
 ### Create & apply a new migration (dev)
 ```bash
-pnpm migrate
+pnpm makemigration 
 ```
 
 ### Apply existing migrations in production
