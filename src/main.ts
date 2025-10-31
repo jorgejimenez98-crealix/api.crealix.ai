@@ -1,6 +1,6 @@
 import { Hono } from "hono"
-import { corsMiddleware } from "./config/cors"
-import { env } from "./config/env"
+import { corsMiddleware } from "@/config/cors"
+import { env } from "@/config/env"
 
 const app = new Hono()
 
