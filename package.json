@@ -4,15 +4,21 @@
     "dev": "bun run --hot src/main.ts",
     "build": "bun build src/main.ts --outdir dist --target bun",
     "start": "bun run dist/main.js",
+
     "lint": "biome check",
     "format": "biome format --write",
 
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev",
-    "prisma:studio": "prisma studio",
+    "validate": "prisma validate",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "reset": "prisma migrate reset -f",
+    "studio": "prisma studio",
 
     "db:up": "docker compose up -d",
-    "db:down": "docker compose down"
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs -f",
+    "db:reset": "docker compose down -v && docker compose up -d"
   },
   "dependencies": {
     "@prisma/client": "^6.18.0",
