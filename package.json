@@ -4,17 +4,14 @@
     "dev": "bun run --hot src/main.ts",
     "build": "bun build src/main.ts --outdir dist --target bun",
     "start": "bun run dist/main.js",
-
     "lint": "biome check",
     "format": "biome format --write",
-
     "validate": "prisma validate",
     "generate": "prisma generate",
     "makemigration": "prisma migrate dev -n",
     "migrate": "prisma migrate deploy",
     "reset": "prisma migrate reset -f",
     "studio": "prisma studio",
-
     "db:up": "docker compose up -d",
     "db:down": "docker compose down",
     "db:logs": "docker compose logs -f",
@@ -22,6 +19,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.18.0",
+    "better-auth": "^1.3.34",
     "dotenv": "^17.2.3",
     "dotenv-expand": "^12.0.3",
     "hono": "^4.10.4",

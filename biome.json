@@ -25,7 +25,7 @@
     "rules": {
       "recommended": true,
       "style": {
-        "useNamingConvention": "warn",
+        "useNamingConvention": "off",
         "useImportType": "off"
       },
       "correctness": {
@@ -66,7 +66,12 @@
       ]
     },
     {
-      "includes": ["src/**/*.ts", "routes/**/*.ts", "functions/**/*.ts"],
+      "includes": [
+        "prisma/**/*.prisma",
+        "src/**/*.ts",
+        "routes/**/*.ts",
+        "functions/**/*.ts"
+      ],
       "linter": {
         "rules": {
           "suspicious": {

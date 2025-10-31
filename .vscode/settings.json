@@ -3,6 +3,9 @@
   "files.associations": {
     "*.css": "tailwindcss"
   },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
 
   // Error Lens
   "errorLens.codeLensEnabled": false,

@@ -5,7 +5,6 @@ model User {
 
   email        String   @unique              @db.VarChar(320)
 
-  // Store only the hash, never the raw password. Use Argon2id (recommended).
   passwordHash String   @map("password_hash") @db.VarChar(255)
 
   isAdmin      Boolean  @default(false)      @map("is_admin")
@@ -13,6 +12,9 @@ model User {
 
   createdAt    DateTime @default(now())      @map("created_at")
   updatedAt    DateTime @updatedAt           @map("updated_at")
+
+  accounts Account[]
+  sessions Session[]
 
   @@map("users")
   @@index([createdAt])

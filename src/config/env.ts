@@ -44,6 +44,11 @@ const EnvSchema = z.object({
 
   // PostgreSQL connection string
   DATABASE_URL: z.string(),
+
+  // Google Auth
+  GOOGLE_CLIENT_ID: z.string(),
+  GOOGLE_CLIENT_SECRET: z.string(),
+  OAUTH_REDIRECT_URL: z.string(),
 })
 
 const parsed = EnvSchema.safeParse(process.env)

@@ -1,0 +1,14 @@
+model Account {
+  id                String      @id @default(cuid())
+  userId            String      @map("user_id")
+  provider          String      
+  providerAccountId String      @map("provider_account_id")
+  accessToken       String?     @map("access_token")
+  refreshToken      String?     @map("refresh_token")
+  expiresAt         DateTime?   @map("expires_at") 
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
