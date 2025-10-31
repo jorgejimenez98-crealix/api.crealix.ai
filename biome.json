@@ -32,7 +32,12 @@
         "noUnusedVariables": "error"
       },
       "suspicious": {
-        "noConsole": "warn"
+        "noConsole": {
+          "level": "on",
+          "options": {
+            "allow": ["assert", "error", "info", "warn", "debug"]
+          }
+        }
       }
     }
   },
@@ -55,14 +60,7 @@
         "**/__tests__/**/*.{ts,js}",
         "**/tests/**/*.{ts,js}",
         "**/scripts/**/*.{ts,js}"
-      ],
-      "linter": {
-        "rules": {
-          "suspicious": {
-            "noConsole": "off"
-          }
-        }
-      }
+      ]
     },
     {
       "includes": ["src/**/*.ts", "routes/**/*.ts", "functions/**/*.ts"],
